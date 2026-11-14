@@ -1,6 +1,4 @@
-// Isi dua nilai di bawah dari akun Supabase Anda (langkahnya ada di PANDUAN.md).
-// Kalau dibiarkan kosong, wishlist dan jadwal ngedate hanya menampilkan catatan.
 window.APP_CONFIG = {
-  supabaseUrl: "",  // contoh: https://abcdefgh.supabase.co
-  supabaseKey: ""   // kunci "publishable" (diawali sb_publishable_) atau kunci "anon"
+  supabaseUrl: "https://skzjzwliinodmvzoodgt.supabase.co",
+  supabaseKey: "sb_publishable_M40cnAyu9znEDVrzG0VDzg_PnC_M2Sr"
 };
