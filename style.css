@@ -1,3 +1,4 @@
+/* Dasar halaman (di versi artifact ini disediakan platform) */
 :root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 body { margin: 0; }
 img { max-width: 100%; }
@@ -276,3 +277,6 @@ section { padding-block: 56px; }
   .coupon, .open .body, .open .chev { transition: none; }
   .coupon:hover { transform: none; }
 }
+
+/* foto di bingkai lengkung memenuhi bingkai */
+.arch:has(img) { padding: 0; }
