@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Untuk Kamu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<div class="heroband" id="hero">
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="hero">
+      <span class="label rise">Hanya untukmu</span>
+      <h1 class="rise" style="animation-delay:.1s">Untuk Kamu</h1>
+      <p class="sub rise" style="animation-delay:.2s">Aku buat halaman kecil ini supaya semua yang sudah kita lewati ada di satu tempat.</p>
+
+      <div class="counter rise" style="animation-delay:.3s">
+        <div class="big"><span id="days">0</span><small>hari bersama</small></div>
+        <div class="parts">
+          <div><b id="y">0</b>tahun</div>
+          <div><b id="m">0</b>bulan</div>
+          <div><b id="d">0</b>hari</div>
+        </div>
+        <p class="live">Sudah <b id="secs">0</b> detik, dan masih bertambah.</p>
+        <p class="since">Dihitung sejak <span id="since"></span></p>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="wrap">
+  <main>
+    <section id="ucapan" style="padding-top:32px">
+      <div class="dedic rv">
+        <figure class="pt">
+          <div class="arch">Foto dia</div>
+          <figcaption><span>Untuk kamu,</span><b>pujaan hatiku</b></figcaption>
+        </figure>
+        <div class="mid" aria-hidden="true"><span>&#9829;&#xFE0E;</span></div>
+        <figure class="pt">
+          <div class="arch">Foto kamu</div>
+          <figcaption><span>Dari</span><b>kekasihmu</b></figcaption>
+        </figure>
+      </div>
+      <p class="words rv">Terima kasih sudah hadir dan membuat hari-hariku lebih hangat. Aku sayang kamu hari ini, besok, dan seterusnya.</p>
+    </section>
+
+    <section id="surat" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Surat</span>
+        <h2>Yang ingin kukatakan</h2>
+      </div>
+      <article class="letter">
+        <p class="hi rv">Sayang,</p>
+        <p class="rv">Ada banyak hal yang sulit kuucapkan langsung, jadi aku tuliskan di sini. Terima kasih sudah sabar menghadapi aku di hari-hari yang tidak mudah.</p>
+        <p class="rv">Aku suka caramu tertawa pada hal-hal kecil, caramu memperhatikan orang lain tanpa diminta, dan caramu membuat hari yang biasa terasa lebih ringan.</p>
+        <p class="rv">Aku tidak berjanji semuanya selalu mudah. Tapi aku mau terus ada di sampingmu, di hari baik maupun hari buruk.</p>
+        <p class="sign rv">Dari aku, yang sayang kamu</p>
+      </article>
+    </section>
+
+    <section id="kenangan" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Perjalanan kita</span>
+        <h2>Momen yang kuingat</h2>
+      </div>
+      <ol class="timeline" id="tl">
+        <li class="rv">
+          <time>Awal kenal</time>
+          <h3>Pertama kali bertemu</h3>
+          <p>Hari itu aku belum tahu kamu akan jadi orang yang paling sering kuhubungi.</p>
+        </li>
+        <li class="rv">
+          <time>Sebelum jadian</time>
+          <h3>Kencan pertama</h3>
+          <p>Kita bicara berjam-jam sampai tempatnya hampir tutup.</p>
+        </li>
+        <li class="rv">
+          <time>5 November 2026</time>
+          <h3>Resmi bersama</h3>
+          <p>Hari yang paling sering kuceritakan ke teman-temanku.</p>
+        </li>
+        <li class="rv">
+          <time>Minggu pertama</time>
+          <h3>Hari-hari pertama</h3>
+          <p>Setiap hari terasa seperti kabar baik.</p>
+        </li>
+        <li class="rv">
+          <time>Hari ini</time>
+          <h3>Masih memilihmu</h3>
+          <p>Dan aku tidak berencana berhenti.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="hitung" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Yang kita tunggu</span>
+        <h2 id="cdTitle">1 bulan jadian</h2>
+        <p class="hint" style="margin:0">Tinggal menunggu sampai <span id="cdDate">5 Desember 2026</span>.</p>
+      </div>
+      <div class="cdgrid rv">
+        <div class="cdbox"><b id="cdD">0</b><span>hari</span></div>
+        <div class="cdbox"><b id="cdH">00</b><span>jam</span></div>
+        <div class="cdbox"><b id="cdM">00</b><span>menit</span></div>
+        <div class="cdbox"><b id="cdS">00</b><span>detik</span></div>
+      </div>
+    </section>
+
+    <section id="jadwal" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Rencana kita</span>
+        <h2>Jadwal ngedate</h2>
+        <p class="hint" style="margin:0">Tulis rencana di sini. Isinya tersimpan dan terlihat oleh kita berdua.</p>
+      </div>
+      <p class="dbnote" id="dNote" hidden></p>
+      <form class="addform" id="dForm" autocomplete="off">
+        <div class="fld full"><label for="dTitle">Mau ngapain?</label><input id="dTitle" type="text" maxlength="80" placeholder="Nonton, makan malam, piknik"></div>
+        <div class="fld"><label for="dDate">Tanggal</label><input id="dDate" type="date"></div>
+        <div class="fld"><label for="dTime">Jam</label><input id="dTime" type="time"></div>
+        <div class="fld full"><label for="dPlace">Di mana (boleh kosong)</label><input id="dPlace" type="text" maxlength="80" placeholder="Nama tempat"></div>
+        <button class="btn" type="submit" id="dAdd">Tambah jadwal</button>
+      </form>
+      <div class="chips" id="dChips">
+        <button class="chip" type="button">Makan malam berdua</button>
+        <button class="chip" type="button">Nonton bioskop</button>
+        <button class="chip" type="button">Piknik sore</button>
+        <button class="chip" type="button">Jalan-jalan santai</button>
+      </div>
+      <p class="lstatus" id="dStatus" role="status"></p>
+      <p class="lstatus" id="dLoad"></p>
+      <div class="dlist" id="dList"><p class="empty">Memuat rencana…</p></div>
+      <details class="pastwrap" id="dPastWrap" hidden>
+        <summary>Sudah lewat (<span id="dPastN">0</span>)</summary>
+        <div class="dlist" id="dPast"></div>
+      </details>
+    </section>
+
+    <section id="wishlist" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Daftar impian</span>
+        <h2>Wishlist kita</h2>
+        <p class="hint" style="margin:0">Tempat, makanan, atau hal yang ingin kita lakukan. Centang kalau sudah kesampaian.</p>
+      </div>
+      <p class="dbnote" id="wNote" hidden></p>
+      <form class="addform" id="wForm" autocomplete="off">
+        <div class="fld full"><label for="wTitle">Yang diinginkan</label><input id="wTitle" type="text" maxlength="80" placeholder="Ke pantai, makan ramen, nonton konser"></div>
+        <div class="fld">
+          <label for="wKind">Jenis</label>
+          <select id="wKind">
+            <option>Tempat</option>
+            <option>Makanan</option>
+            <option>Aktivitas</option>
+            <option>Barang</option>
+          </select>
+        </div>
+        <div class="fld">
+          <span class="lbl" id="wByLbl">Dari siapa</span>
+          <div class="seg" role="radiogroup" aria-labelledby="wByLbl">
+            <label class="pill"><input type="radio" name="wBy" value="aku" checked><span>Aku</span></label>
+            <label class="pill"><input type="radio" name="wBy" value="kamu"><span>Kamu</span></label>
+          </div>
+        </div>
+        <button class="btn" type="submit" id="wAdd">Tambah ke wishlist</button>
+      </form>
+      <div class="chips" id="wChips">
+        <button class="chip" type="button">Lihat matahari terbit</button>
+        <button class="chip" type="button">Coba restoran baru</button>
+        <button class="chip" type="button">Liburan berdua</button>
+        <button class="chip" type="button">Foto studio</button>
+      </div>
+      <p class="lstatus" id="wStatus" role="status"></p>
+      <p class="lstatus" id="wLoad"></p>
+      <div class="wlist" id="wList"><p class="empty">Memuat wishlist…</p></div>
+      <p class="wsum" id="wCount"></p>
+      <p class="wdone" id="wDone" hidden>Semuanya kesampaian. Saatnya menulis yang baru.</p>
+    </section>
+
+    <section id="alasan" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Alasan</span>
+        <h2>Kenapa aku sayang kamu</h2>
+      </div>
+      <div class="reason rv">
+        <blockquote id="reason" aria-live="polite">Kamu mendengarkan sampai selesai, bahkan saat ceritaku berputar-putar.</blockquote>
+        <div class="row">
+          <button class="btn" id="next" type="button">Alasan lainnya</button>
+          <span class="count" id="rcount">1 dari 8</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="foto" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Galeri</span>
+        <h2>Kita, dalam foto</h2>
+      </div>
+      <p class="hint">Ketuk sebuah foto untuk membaca catatannya.</p>
+      <div class="gallery">
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Hari pertama">
+            <span class="face front">Tempat foto 1</span>
+            <span class="face back">Aku gugup sekali, tapi tidak mau pulang.</span>
+          </button>
+          <figcaption>Hari pertama</figcaption>
+        </figure>
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Makan malam favorit">
+            <span class="face front">Tempat foto 2</span>
+            <span class="face back">Kamu memesan terlalu banyak, aku senang menghabiskannya.</span>
+          </button>
+          <figcaption>Makan malam favorit</figcaption>
+        </figure>
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Liburan kita">
+            <span class="face front">Tempat foto 3</span>
+            <span class="face back">Kita tersesat dan itu bagian terbaiknya.</span>
+          </button>
+          <figcaption>Liburan kita</figcaption>
+        </figure>
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Hari ulang tahunmu">
+            <span class="face front">Tempat foto 4</span>
+            <span class="face back">Kamu tiup lilin, aku diam-diam memohon hal yang sama.</span>
+          </button>
+          <figcaption>Hari ulang tahunmu</figcaption>
+        </figure>
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Jalan-jalan sore">
+            <span class="face front">Tempat foto 5</span>
+            <span class="face back">Sore yang biasa, tapi aku mau mengulangnya terus.</span>
+          </button>
+          <figcaption>Jalan-jalan sore</figcaption>
+        </figure>
+        <figure class="shot rv">
+          <button class="card" type="button" aria-pressed="false" aria-label="Balik kartu: Selfie paling jelek">
+            <span class="face front">Tempat foto 6</span>
+            <span class="face back">Jelek menurutmu. Favorit menurutku.</span>
+          </button>
+          <figcaption>Selfie paling jelek</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="kupon" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Hadiah kecil</span>
+        <h2>Kupon cinta</h2>
+      </div>
+      <p class="hint">Ketuk kupon untuk menukarnya. Ketuk lagi kalau salah pencet.</p>
+      <div class="coupons">
+        <button class="coupon rv" type="button" data-id="makan" aria-pressed="false"><small>Kupon</small><h3>Traktir makan malam</h3><span class="state">Ketuk untuk menukar</span></button>
+        <button class="coupon rv" type="button" data-id="peluk" aria-pressed="false"><small>Kupon</small><h3>Peluk lama tanpa protes</h3><span class="state">Ketuk untuk menukar</span></button>
+        <button class="coupon rv" type="button" data-id="film" aria-pressed="false"><small>Kupon</small><h3>Kamu yang pilih film malam ini</h3><span class="state">Ketuk untuk menukar</span></button>
+        <button class="coupon rv" type="button" data-id="bebas" aria-pressed="false"><small>Kupon</small><h3>Satu permintaan kecil, bebas</h3><span class="state">Ketuk untuk menukar</span></button>
+      </div>
+    </section>
+
+    <section id="kuis" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Main sebentar</span>
+        <h2>Kuis kecil tentang kita</h2>
+      </div>
+      <div class="quiz rv">
+        <p class="prog" id="qprog">Pertanyaan 1 dari 3</p>
+        <p class="q" id="qtext">Siapa yang lebih dulu jatuh cinta?</p>
+        <div class="opts" id="qopts"></div>
+        <p class="fb" id="qfb" aria-live="polite"></p>
+        <button class="btn" id="qnext" type="button" hidden>Lanjut</button>
+      </div>
+    </section>
+
+    <section id="amplop" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Surat kecil</span>
+        <h2>Buka kalau&hellip;</h2>
+      </div>
+      <p class="hint">Ketuk amplop yang sesuai dengan suasana hatimu.</p>
+      <div class="opens">
+        <div class="open rv">
+          <button type="button" aria-expanded="false" aria-controls="op1"><span class="ico" aria-hidden="true">&#9993;&#xFE0E;</span>Buka kalau kamu lagi sedih<span class="chev" aria-hidden="true">&#9662;</span></button>
+          <div class="body" id="op1"><div><p>Kamu tidak harus kuat setiap saat. Menangis boleh, diam boleh. Aku ada, dan aku tidak akan menyuruhmu cepat-cepat baik-baik saja.</p></div></div>
+        </div>
+        <div class="open rv">
+          <button type="button" aria-expanded="false" aria-controls="op2"><span class="ico" aria-hidden="true">&#9993;&#xFE0E;</span>Buka kalau kamu kangen aku<span class="chev" aria-hidden="true">&#9662;</span></button>
+          <div class="body" id="op2"><div><p>Aku juga. Kirim pesan sekarang, aku pasti senang. Dan kalau aku sedang sibuk, aku tetap memikirkanmu.</p></div></div>
+        </div>
+        <div class="open rv">
+          <button type="button" aria-expanded="false" aria-controls="op3"><span class="ico" aria-hidden="true">&#9993;&#xFE0E;</span>Buka kalau kamu susah tidur<span class="chev" aria-hidden="true">&#9662;</span></button>
+          <div class="body" id="op3"><div><p>Taruh ponselmu, tarik napas pelan, dan ingat bahwa kamu sudah cukup hari ini. Semua yang belum selesai bisa menunggu sampai besok. Selamat tidur, sayang.</p></div></div>
+        </div>
+        <div class="open rv">
+          <button type="button" aria-expanded="false" aria-controls="op4"><span class="ico" aria-hidden="true">&#9993;&#xFE0E;</span>Buka kalau kamu lagi capek<span class="chev" aria-hidden="true">&#9662;</span></button>
+          <div class="body" id="op4"><div><p>Berhenti sebentar. Minum air, makan yang enak, istirahat. Kamu tidak perlu membuktikan apa pun padaku. Aku bangga padamu apa adanya.</p></div></div>
+        </div>
+        <div class="open rv">
+          <button type="button" aria-expanded="false" aria-controls="op5"><span class="ico" aria-hidden="true">&#9993;&#xFE0E;</span>Buka kalau kita lagi bertengkar<span class="chev" aria-hidden="true">&#9662;</span></button>
+          <div class="body" id="op5"><div><p>Aku tahu aku bisa menyebalkan. Yang kuinginkan adalah menyelesaikannya bersamamu, bukan menang darimu. Kita bicara pelan-pelan, ya.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lagu" style="padding-top:8px">
+      <div class="sec-head rv">
+        <span class="label">Untuk didengar</span>
+        <h2>Lagu kita</h2>
+      </div>
+      <div class="song rv">
+        <div class="disc" aria-hidden="true"></div>
+        <div>
+          <h3 id="songTitle">Judul Lagu Kita</h3>
+          <p class="artist" id="songArtist">Nama Artis</p>
+          <p class="note">Setiap kali lagu ini terdengar, aku ingat kamu.</p>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="links">
+            <a class="btn" id="yt" href="#" target="_blank" rel="noopener">Buka di YouTube</a>
+            <a class="btn ghost" id="sp" href="#" target="_blank" rel="noopener">Buka di Spotify</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="end">
+    <p class="big rv">Terima kasih sudah menjadi kamu.</p>
+    <div class="burstwrap">
+      <button class="btn hb" id="hb" type="button">Tekan kalau kamu juga sayang aku</button>
+      <div class="burst" id="burst" aria-hidden="true"></div>
+    </div>
+    <p class="hmsg" id="hmsg" role="status"></p>
+    <small>Dibuat dengan sayang <button class="secretbtn" id="sbtn" type="button" aria-label="Ada sesuatu di sini">&#9829;&#xFE0E;</button></small>
+    <p class="secret" id="secret" hidden>Kamu menemukannya. Tunjukkan layar ini padaku dan bilang "aku menemukannya". Ada es krim untukmu.</p>
+  </footer>
+</div>
+</body>
+</html>
